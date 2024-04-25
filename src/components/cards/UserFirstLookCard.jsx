@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const UserFirstLookCard = ({username , bio , profielImg , unknown=true , email , mutuals=[]}) => {
     const handleSendFriendRequest = () => {
@@ -9,7 +11,7 @@ const UserFirstLookCard = ({username , bio , profielImg , unknown=true , email ,
     <div className="flex justify-center -mt-16 md:justify-end">
         <img className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400" alt="Testimonial avatar" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"/>
     </div>
-    <a href="#" className="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">John Doe</a>
+    <Link to="/" className="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">John Doe</Link>
     <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores deserunt ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
 
     {
