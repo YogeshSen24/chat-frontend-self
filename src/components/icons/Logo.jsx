@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Logo = ({img="https://merakiui.com/images/logo.svg"}) => {
   return (
       <Link to="/">
-            <img class="w-auto h-6" src={img} alt="" />
+            <img className="w-auto h-6" src={img} alt="" />
         </Link>
   )
 }

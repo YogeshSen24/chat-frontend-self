@@ -10,45 +10,22 @@ import Requests from "../pages/Requests.jsx";
 import Settings from "../pages/Settings.jsx";
 
 const AppRouter = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Layout />}
-                >
-                    <Route
-                        index
-                        element={<Home />}
-                    />
-                    <Route
-                        path="groups"
-                        element={<Groups />}
-                    />
-                    <Route
-                        path="requests"
-                        element={<Requests />}
-                    />
-                    <Route
-                        path="settings"
-                        element={<Settings />}
-                    />
-                    <Route
-                        path="chat"
-                        element={<Chat />}>
-                        <Route
-                            path="add"
-                            element={<AddFriend />}
-                        />
-                    </Route>
-                </Route>
-                <Route
-                    path="/login"
-                    element={<Login />}
-                />
-            </Routes>
-        </Router>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="groups" element={<Groups />} />
+          <Route path="requests" element={<Requests />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="chat" element={<Chat />}>
+            <Route path="add" element={<AddFriend />} />
+          </Route>
+        </Route>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default AppRouter;

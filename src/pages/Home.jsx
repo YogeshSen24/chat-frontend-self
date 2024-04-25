@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Container>
       <div className="flex flex-col w-full h-full items-center ">
-      {/* <img src={currentUser?.data?.profileImage} class="object-cover h-48 aspect-[4/3] rounded-xl "></img>
+      {/* <img src={currentUser?.data?.profileImage} className="object-cover h-48 aspect-[4/3] rounded-xl "></img>
       <h2 className="text-white text-3xl font-bold text-center my-5">Welcome back ,  {currentUser?.data?.username} </h2>
       {copyTOClipboard(currentUser?.data?._id)} */}
       </div>
