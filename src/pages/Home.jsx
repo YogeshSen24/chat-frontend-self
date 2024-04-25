@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import currentUser from "../DummyData/currentUser";
 import Container  from "../components/Container.jsx";
-import UserFirstLookCard from "../components/cards/userFirstLookCard.jsx";
+import UserFirstLookCard from "../components/cards/UserFirstLookCard.jsx";
 
 const Home = () => {
 
