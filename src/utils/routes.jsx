@@ -15,7 +15,7 @@ export default routes = createBrowserRouter( [
     {
         path: "/",
         element: <Layout />,
-        childrens: [
+        children: [
             {
                 path: "",
                 element: <Home />
