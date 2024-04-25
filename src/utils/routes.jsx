@@ -9,48 +9,51 @@ import Groups from "../pages/Group.jsx"
 import Requests from "../pages/Requests.jsx"
 import Settings from "../pages/Settings.jsx";
 
-let routes;
-
-export default routes = createBrowserRouter( [
-    {
-        path: "/",
-        element: <Layout />,
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Home />
+      },
+      {
+        path: "groups",
+        element: <Groups />
+      },
+      {
+        path: "requests",
+        element: <Requests />
+      },
+      {
+        path: "settings",
+        element: <Settings />
+      },
+      {
+        path: "chat",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
         children: [
-            {
-                path: "",
-                element: <Home />
-            },
-            {
-                path: "groups",
-                element: <Groups />
-            },
-            {
-                path: "requests",
-                element: <Requests />
-            },
-            {
-                path: "settings",
-                element: <Settings />
-            },
-            {
-                path: "chat",
-                element: <><Outlet/></>,
-                children: [
-                    {
-                        path : "",
-                        element:<Chat/>
-                    },
-                    {
-                        path : "add",
-                        element:<AddFriend/>
-                    }
-                ]
-
-            },
+          {
+            path: "",
+            element: <Chat />
+          },
+          {
+            path: "add",
+            element: <AddFriend />
+          }
         ]
-    },
-    {
-        path: "/login",
-        element: <Login />
-    },
-])
+      }
+    ]
+  },
+  {
+    path: "/login",
+    element: <Login />
+  }
+]);
+
+export default routes;
