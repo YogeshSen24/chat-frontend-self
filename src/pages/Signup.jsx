@@ -1,14 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useCookies } from 'react-cookie';
 
 const Signup = () => {
+  const [cookies, setCookie] = useCookies(['user']);
   const [data , setData] = useState({})
   const handleChange = (e) =>{
     setData({...data,[e.target.name]:e.target.value})
-    console.log(data)
   }
-  const handleLogin = () =>{
-    axios.post("https://mean-chat-app-backend.onrender.com/api/v1/auth/login",data)
+  const handleLogin = async() =>{
+    e.preventDefault();
+    const url = "https://mean-chat-app-backend.onrender.com/api/v1/auth/signup"
+    try {
+      const res = await axios.post(url, data);
+      console.log(res.data); // Log the response data
+      setCookie('token', res.data.token, { path: '/' });
+      navigate("/")
+        
+    } catch (error) {
+      console.error("Error:", error); // Log any errors
+    }
   }
   return (
     <div className='relative h-screen'>

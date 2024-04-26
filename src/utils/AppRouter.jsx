@@ -8,6 +8,7 @@ import AddFriend from "../pages/AddFriend.jsx";
 import Groups from "../pages/Group.jsx";
 import Requests from "../pages/Requests.jsx";
 import Settings from "../pages/Settings.jsx";
+import Signup from "../pages/Signup.jsx";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,8 @@ const AppRouter = () => {
           </Route>
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );

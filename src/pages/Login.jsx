@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useCookies } from 'react-cookie';
+
+
 
 const Login = () => {
+  const [cookies, setCookie] = useCookies(['user']);
   const navigate = useNavigate()
   const [data , setData] = useState({})
   const handleChange = (e) =>{
@@ -16,9 +20,8 @@ const Login = () => {
     try {
       const res = await axios.post(url, data);
       console.log(res.data); // Log the response data
-        // Handle success
-        console.log(res)
-        navigate("/")
+      setCookie('token', res.data.token, { path: '/' });
+      navigate("/")
         
     } catch (error) {
       console.error("Error:", error); // Log any errors
